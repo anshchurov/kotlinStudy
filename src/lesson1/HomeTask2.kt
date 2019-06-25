@@ -6,7 +6,8 @@ import java.io.File
 fun main(args: Array<String>) {
 
     var listEmployee = readEmployee("C:\\Users\\Dron4yes\\Desktop\\Kotlin study\\src\\lesson1\\resources\\file")
-    print(findByName("nam1", listEmployee!!))
+    var finded = findByName("nam11", listEmployee!!)[0].lasyName //TODO checking null
+    print(finded)
 }
 
 //fun readEmployee(filePath: String): List<Employee>
@@ -28,6 +29,6 @@ class Employee(
 
 )
 
-fun findByName(name: String, listEmployee: List<Employee>):String?{
-    return listEmployee.forEach{ it -> it.name == name}.toString()
+fun findByName(name: String, listEmployee: List<Employee>): List<Employee> {
+    return listEmployee.filter{ it.name == name}
 }
