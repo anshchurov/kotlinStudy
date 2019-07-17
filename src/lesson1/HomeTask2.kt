@@ -1,7 +1,7 @@
 package lesson1
 
 import java.io.File
-
+//TODO добавить использование функции 'let'
 fun main(args: Array<String>) {
 
     var listEmployee = readEmployee("C:\\Users\\user\\Desktop\\Kotlin study\\src\\lesson1\\resources\\file")
