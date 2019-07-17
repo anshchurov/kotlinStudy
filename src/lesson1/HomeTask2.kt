@@ -29,6 +29,6 @@ class Employee(
 )
 
 fun findByName(name: String, listEmployee: List<Employee>?): List<Employee> {
-    if (listEmployee == null) throw NullPointerException("wtf")
-    return listEmployee.filter{ it.name == name}
+//    if (listEmployee == null) throw NullPointerException("wtf")
+    return listEmployee?.filter{ it.name == name} ?: throw NullPointerException("wtf")
 }
