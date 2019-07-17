@@ -1,12 +1,11 @@
 package lesson1
 
-import jdk.nashorn.internal.objects.NativeArray.forEach
 import java.io.File
 
 fun main(args: Array<String>) {
 
-    var listEmployee = readEmployee("C:\\Users\\Dron4yes\\Desktop\\Kotlin study\\src\\lesson1\\resources\\file")
-    var finded = findByName("nam11", listEmployee!!)[0].lasyName //TODO checking null
+    var listEmployee = readEmployee("C:\\Users\\user\\Desktop\\Kotlin study\\src\\lesson1\\resources\\file")
+    var finded = findByName("nam11", listEmployee!!)[0].lastName //TODO checking null
     print(finded)
 }
 
@@ -23,12 +22,13 @@ fun readEmployee(filePath: String): List<Employee>? {
 }
 
 class Employee(
-    val name: String,
-    val lasyName: String,
-    var phone: String
+        val name: String,
+        val lastName: String,
+        var phone: String
 
 )
 
-fun findByName(name: String, listEmployee: List<Employee>): List<Employee> {
+fun findByName(name: String, listEmployee: List<Employee>?): List<Employee> {
+    if (listEmployee == null) throw NullPointerException("wtf")
     return listEmployee.filter{ it.name == name}
 }

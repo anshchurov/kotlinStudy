@@ -9,7 +9,7 @@ fun main(args: Array<String>) {
     }
 }
 
-// расширить для варианта с 2мя квартирами на 1ом этаже
+//TODO расширить для варианта с 2мя квартирами на 1ом этаже
 fun getFloorAndEntrance(num: Int): Pair<Int, Int>? {
     val floor = 5
     val entrance = 6
